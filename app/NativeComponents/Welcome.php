@@ -17,9 +17,7 @@ class Welcome extends NativeComponent
 
     public function getStarted(): void
     {
-        // Navigate to the main app screen
-        // TODO: Replace with your app's home route
-        // $this->navigate('/home');
+        $this->navigate('/scan');
     }
 
     public function render(): View

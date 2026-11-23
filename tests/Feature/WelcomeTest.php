@@ -12,7 +12,7 @@ class WelcomeTest extends TestCase
     {
         Native::test(Welcome::class)
             ->assertSee('BubbleScan')
-            ->assertSee('Scan. Grade. Done.')
+            ->assertSee("The fastest way to grade bubble sheets with your phone's camera.")
             ->assertSee('Instant Scanning')
             ->assertSee('Smart Analytics')
             ->assertSee('Accurate Grading')
@@ -23,5 +23,12 @@ class WelcomeTest extends TestCase
     {
         Native::test(Welcome::class)
             ->assertSet('showContent', true);
+    }
+
+    public function test_get_started_navigates_to_scan_screen(): void
+    {
+        Native::test(Welcome::class)
+            ->tap('Get Started')
+            ->assertNavigatedTo('/scan');
     }
 }
